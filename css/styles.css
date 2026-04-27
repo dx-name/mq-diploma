@@ -279,12 +279,8 @@ h2 {
 }
 
 .feedback {
-  position: absolute;
-  left: calc(50% - 165px);
-  top: calc(50% - 245px);
   padding: 45px 32px 55px 30px;
   width: 330px;
-  height: 490px;
   background-color: #ffffff;
   z-index: 3;
 }
@@ -901,12 +897,12 @@ a.tags-all:hover {
   border: 3px solid #b59f5b;
   padding-top: 50px;
   padding-right: 20px;
+  padding-left: 20px;
   margin-top: -30px;
 }
 
 .products-title {
   margin-top: -2px;
-  margin-left: 20px;
   font-weight: bold;
   font-style: normal;
   font-size: 1.3em;
@@ -915,7 +911,6 @@ a.tags-all:hover {
 
 .products-text {
   margin-top: 6px;
-  margin-left: 20px;
   margin-bottom: 28px;
   font-weight: normal;
   font-style: normal;
@@ -940,38 +935,33 @@ a.tags-all:hover {
 
 .products-price-old {
   font-weight: bold;
-  margin-left: 20px;
   text-decoration: line-through;
   width: 100%;
   height: 20px;
 }
 
-.ruble-old {
-  height: 10px;
-}
-
 .products-price-new {
   font-weight: bold;
   font-size: 1.4em;
-  margin-left: 20px;
   margin-top: -9px;
   width: 100%;
 }
 
 .products-btn {
   box-sizing: border-box;
-  width: 140px;
+  width: 160px;
   height: 48px;
   border: 1px solid #b59f5b;
-  margin-left: 109px;
+  margin-left: auto;
   margin-top: -4px;
-  padding: 0;
+  padding-top: 15px;
   background: #b59f5b;
   cursor: pointer;
   font-weight: bold;
   font-style: normal;
   font-size: 14px;
   text-transform: uppercase;
+  text-align: center;
   color: #fff;
 }
 
@@ -984,7 +974,7 @@ a.tags-all:hover {
 .footer-list {
   display: flex;
   justify-content: center;
-  max-width: 1170px;
+  max-width: 100%;
   width: 100%;
   background-color: #f4f7f6;
   margin-top: 65px;
@@ -1022,14 +1012,11 @@ a.tags-all:hover {
   align-self: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .trends-all {
     grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     min-height: 247px;
   }
-}
-
-@media (max-width: 768px) {
   .header {
     min-height: 392px;
   }
@@ -1038,11 +1025,7 @@ a.tags-all:hover {
     background-image: url("../images/banner-bg-tablet.jpg");
   }
 
-  .header-top {
-    max-width: 768px;
-  }
-
-  .header-logo {
+   .header-logo {
     width: 160px;
     margin-left: 35px;  
   }
@@ -1092,7 +1075,6 @@ a.tags-all:hover {
   }
 
   .homepage {
-    width: 698px;
     margin-left: 35px;
   }
 
@@ -1117,7 +1099,6 @@ a.tags-all:hover {
 
   .post-blok {
     margin-left: 0;
-    width: 381px;
   }
 
   .posts-new {
@@ -1148,13 +1129,13 @@ a.tags-all:hover {
   }
 
   .footer {
-    width: 698px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 640px) {
   .header-bg {
     background-image: url("../images/banner-mobile.jpg");
   }
@@ -1165,8 +1146,7 @@ a.tags-all:hover {
   }
 
   .header-logo {
-    width: 100%;
-    margin: 0 0 40px 0;
+    margin-left: calc(50% - 190px);
   }
 
   .header-logo-svg {
@@ -1201,7 +1181,11 @@ a.tags-all:hover {
 
   .header-title h1 {
     font-size: 24px;
-    margin: 0 45.5px 215px 45.5px;
+    margin: 40px 45.5px 215px 45.5px;
+  }
+
+  .trends {
+    width: 100%;
   }
 
   .trends-title {
@@ -1210,7 +1194,7 @@ a.tags-all:hover {
 
   .trends-all {
     grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 360px;
+    grid-template-columns: 100%;
   }
 
   .feedback {
@@ -1246,12 +1230,8 @@ a.tags-all:hover {
 
   .homepage {
     flex-direction: column;
-    width: 360px;
+    width: 100%;
     margin-left: 0;
-  }
-
-  .posts-main {
-    width: 360px;
   }
 
   .post-list {
@@ -1285,7 +1265,7 @@ a.tags-all:hover {
   }
 
   .posts-new {
-    width: 330px;
+    width: 100%;
     margin-left: 15px;
     margin-right: 15px;
   }
@@ -1300,18 +1280,27 @@ a.tags-all:hover {
 
   .search {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .search-form {
-    padding-left: 30px;
+    margin: 0 auto;
+    padding-left: 0px;
   }
-  
+
+  .send-mail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .send-mail-title::after {
     margin-left: calc(50% - 33px);
   }
 
   .form-mail {
-    padding-left: 30px;
+    align-self: center;
   }
 
   .tags-title::after {
@@ -1321,24 +1310,23 @@ a.tags-all:hover {
   .theme-title::after {
     margin-left: calc(50% - 33px);
   }
-/*
+
   .products-wrap {
-    margin-left: 0;
-    gap: 0;
-    justify-content: center;
-    width: 330px;
+    margin: 0;
+    padding: 0 15px;
+    width: 100%;
+    column-gap: 0;
   }
 
   .products-box {
-    margin-bottom: 25px;
+    margin: 0 15px;
   }
 
   .img-wrp {
-    width: 298px;
-    margin-left: 16px;
+    margin-left: calc(50% - 150px);
   }
 
   .products-content, .products-card {
-    width: 330px;
-  }*/
+    width: 100%;
+  }
 }
